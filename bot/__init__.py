@@ -60,14 +60,14 @@ qb_listener_lock = Lock()
 status_reply_dict = {}
 download_dict = {}
 
-BOT_TOKEN = environ.get('BOT_TOKEN', '7352305322:AAHz4Aaoco-t5LATZdB8f3lkwRpF1n3BAeo')
+BOT_TOKEN = environ.get('BOT_TOKEN', '')
 if len(BOT_TOKEN) == 0:
     error("BOT_TOKEN variable is missing! Exiting now")
     exit(1)
 
 bot_id = BOT_TOKEN.split(':', 1)[0]
 
-DATABASE_URL = environ.get('DATABASE_URL', 'mongodb+srv://Yuuichi:Yuuichi@cluster0.vuuobqn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+DATABASE_URL = environ.get('DATABASE_URL', '')
 if len(DATABASE_URL) == 0:
     DATABASE_URL = ''
 
@@ -102,9 +102,9 @@ if DATABASE_URL:
         del qbit_opt['_id']
         qbit_options = qbit_opt
     conn.close()
-    BOT_TOKEN = environ.get('BOT_TOKEN', '7352305322:AAHz4Aaoco-t5LATZdB8f3lkwRpF1n3BAeo')
+    BOT_TOKEN = environ.get('BOT_TOKEN', '')
     bot_id = BOT_TOKEN.split(':', 1)[0]
-    DATABASE_URL = environ.get('DATABASE_URL', 'mongodb+srv://Yuuichi:Yuuichi@cluster0.vuuobqn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+    DATABASE_URL = environ.get('DATABASE_URL', '')
 else:
     config_dict = {}
 
@@ -119,14 +119,14 @@ if len(OWNER_ID) == 0:
 else:
     OWNER_ID = int(OWNER_ID)
 
-TELEGRAM_API = environ.get('TELEGRAM_API', '17540447')
+TELEGRAM_API = environ.get('TELEGRAM_API', '')
 if len(TELEGRAM_API) == 0:
     error("TELEGRAM_API variable is missing! Exiting now")
     exit(1)
 else:
     TELEGRAM_API = int(TELEGRAM_API)
 
-TELEGRAM_HASH = environ.get('TELEGRAM_HASH', '8ffa3ede58cd9957f178765dd969ab3e')
+TELEGRAM_HASH = environ.get('TELEGRAM_HASH', '')
 if len(TELEGRAM_HASH) == 0:
     error("TELEGRAM_HASH variable is missing! Exiting now")
     exit(1)
@@ -248,7 +248,7 @@ if len(BASE_URL) == 0:
     warning('BASE_URL not provided!')
     BASE_URL = ''
 
-UPSTREAM_REPO = environ.get('UPSTREAM_REPO', 'https://github.com/Sahil0976/AeonNew1')
+UPSTREAM_REPO = environ.get('UPSTREAM_REPO', '')
 if len(UPSTREAM_REPO) == 0:
     UPSTREAM_REPO = ''
 
