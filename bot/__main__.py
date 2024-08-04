@@ -38,36 +38,36 @@ if config_dict['GDRIVE_ID']:
     help_string = f'''<b>NOTE: Try each command without any arguments to see more details.</b>
 
 <blockquote expandable>/{BotCommands.MirrorCommand[0]} - Start mirroring to Google Drive.
-/{BotCommands.LeechCommand[0]} - Start leeching to Telegram.
-/{BotCommands.YtdlCommand[0]} - Mirror links supported by yt-dlp.
-/{BotCommands.YtdlLeechCommand[0]} - Leech links supported by yt-dlp.
-/{BotCommands.CloneCommand[0]} - Copy files/folders to Google Drive.
-/{BotCommands.CountCommand} - Count files/folders in Google Drive.
-/{BotCommands.ListCommand} - Search in Google Drive(s).
-/{BotCommands.UserSetCommand} - Open the settings panel.
-/{BotCommands.MediaInfoCommand} - View MediaInfo from a file or link.
-/{BotCommands.StopAllCommand[0]} - Cancel all active tasks.
-/{BotCommands.SearchCommand} - Search for torrents using API or plugins.
-/{BotCommands.StatusCommand[0]} - Show the status of all downloads.
-/{BotCommands.StatsCommand[0]} - Display machine stats hosting the bot.</blockquote>
+/1{BotCommands.LeechCommand[0]} - Start leeching to Telegram.
+/1{BotCommands.YtdlCommand[0]} - Mirror links supported by yt-dlp.
+/1{BotCommands.YtdlLeechCommand[0]} - Leech links supported by yt-dlp.
+/1{BotCommands.CloneCommand[0]} - Copy files/folders to Google Drive.
+/1{BotCommands.CountCommand} - Count files/folders in Google Drive.
+/1{BotCommands.ListCommand} - Search in Google Drive(s).
+/1{BotCommands.UserSetCommand} - Open the settings panel.
+/1{BotCommands.MediaInfoCommand} - View MediaInfo from a file or link.
+/1{BotCommands.StopAllCommand[0]} - Cancel all active tasks.
+/1{BotCommands.SearchCommand} - Search for torrents using API or plugins.
+/1{BotCommands.StatusCommand[0]} - Show the status of all downloads.
+/1{BotCommands.StatsCommand[0]} - Display machine stats hosting the bot.</blockquote>
 '''
 else:
     help_string = f'''<b>NOTE: Try each command without any arguments to see more details.</b>
 
 <blockquote expandable>/{BotCommands.LeechCommand[0]} - Start leeching to Telegram.
-/{BotCommands.YtdlLeechCommand[0]} - Leech links supported by yt-dlp.
-/{BotCommands.UserSetCommand} - Open the settings panel.
-/{BotCommands.MediaInfoCommand} - View MediaInfo from a file or link.
-/{BotCommands.StopAllCommand[0]} - Cancel all active tasks.
-/{BotCommands.SearchCommand} - Search for torrents using API or plugins.
-/{BotCommands.StatusCommand[0]} - Show the status of all downloads.
-/{BotCommands.StatsCommand[0]} - Display machine stats hosting the bot.</blockquote>
+/1{BotCommands.YtdlLeechCommand[0]} - Leech links supported by yt-dlp.
+/1{BotCommands.UserSetCommand} - Open the settings panel.
+/1{BotCommands.MediaInfoCommand} - View MediaInfo from a file or link.
+/1{BotCommands.StopAllCommand[0]} - Cancel all active tasks.
+/1{BotCommands.SearchCommand} - Search for torrents using API or plugins.
+/1{BotCommands.StatusCommand[0]} - Show the status of all downloads.
+/1{BotCommands.StatsCommand[0]} - Display machine stats hosting the bot.</blockquote>
 '''
 
 
 @new_thread
 async def stats(_, message):
-    total, used, free, disk = disk_usage('/')
+    total, used, free, disk = disk_usage('/1')
     memory = virtual_memory()
     currentTime = get_readable_time(time() - botStartTime)
     osUptime = get_readable_time(time() - boot_time())
